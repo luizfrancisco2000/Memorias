@@ -131,32 +131,7 @@
                     </form>
                 </section>
             </section>
-
-
         </div>
-        <script>
-            function confere() {
-                document.getElementById("login").style.visibility = "invisible";
-                document.getElementById("buttonLogin").style.visibility = "invisible";
-            }
-            }
-        </script>
-
-        <script>
-            $(document).ready(function () {
-                var urlString = document.URL;
-
-                var url = new URL(urlString);
-                $("#status-login").hide();
-                if (url.searchParams.get("password") == "false") {
-                    $("#status-login").show();
-                } else {
-                    confere();
-                }
-            });
-        </script>
-
-    </script>
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.poptrox.min.js"></script>

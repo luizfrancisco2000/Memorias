@@ -33,7 +33,7 @@
                         }
                     });
                 </script>-->
-                <form action="../UsuarioServlet" method="post">
+                <form action="/Memorias/CadastroUsuario" method="post">
                     <div align="center"><h3>Campos de Cadastro</h3>
                         <div class="field">
                             <input type="file" name="image"> 
@@ -50,7 +50,7 @@
                     </div>
                     <div class="field">
                         <label for="message">Nacionalidade</label>
-                        <select  style="width:150;font-size:11px" name=Pais>
+                        <select  style="width:150;font-size:11px" name="inputPais">
                             <option value="África do Sul">África do Sul</option>
                             <option value="Albânia">Albânia</option>
                             <option value="Alemanha">Alemanha</option>
