@@ -1,26 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mycompany.memorias.Hibernate;
 
-import com.mycompany.memorias.Interfaces.InterfaceDAO;
 import org.hibernate.Session;
 
 /**
  *
- * @author Chico
+ * @author Pedro
+ * @param <T>
  */
-public class HibernateUtil<T> implements InterfaceDAO<T> {
+public class HibernateUtil<T> {
 
-    
-private Session session;
-private String message = "";
-
+    private Session session;
+    private String message = "";
 
     public String salvar(T classe) {
-        session =  HibernateFactory.getSessionFactory().openSession();
+        session = HibernateFactory.getSessionFactory().openSession();
         session.beginTransaction();
         try {
             session.save(classe);
@@ -52,7 +45,7 @@ private String message = "";
     }
 
     public String atualizar(T classe) {
-        session =HibernateFactory.getSessionFactory().openSession();
+        session = HibernateFactory.getSessionFactory().openSession();
         session.beginTransaction();
         try {
             session.update(classe);
@@ -65,4 +58,5 @@ private String message = "";
         }
         return message;
     }
+
 }

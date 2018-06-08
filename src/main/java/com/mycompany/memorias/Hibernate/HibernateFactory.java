@@ -1,6 +1,5 @@
 package com.mycompany.memorias.Hibernate;
 
-import com.fasterxml.classmate.AnnotationConfiguration;
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -14,10 +13,9 @@ public class HibernateFactory {
      */
     public static synchronized void initSessionFactory() {
         if (getSessionFactory() != null) {
-            return;
+            throw new IllegalStateException("Hibernate SessionFactory is already initialized");
         }
         try {
-            //sessionFactory = new AnnotationConfiguration().configure().buildSessionFactory();
             sessionFactory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
         } catch (HibernateException he) {
             System.err.println("Error creating Session: " + he);
@@ -26,18 +24,6 @@ public class HibernateFactory {
     }
 
     public static SessionFactory getSessionFactory() {
-
-        if (sessionFactory != null) {
-            return sessionFactory;
-        } else {
-            try {
-                //sessionFactory = new AnnotationConfiguration().configure().buildSessionFactory();
-                sessionFactory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
-            } catch (HibernateException he) {
-                System.err.println("Error creating Session: " + he);
-                throw new ExceptionInInitializerError(he);
-            }
-        }
         return sessionFactory;
     }
 

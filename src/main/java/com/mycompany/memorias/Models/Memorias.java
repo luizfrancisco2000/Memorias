@@ -7,6 +7,9 @@ package com.mycompany.memorias.Models;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
+import javax.persistence.CascadeType;
+import static javax.persistence.CascadeType.ALL;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,34 +17,41 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
  * @author Chico
  */
 @Entity
-@Table(name="memoria")
-@XmlRootElement
-public class Memorias implements Serializable {    
+@Table(name = "memoria")
+public class Memorias implements Serializable {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codigo;
-        
+
     private boolean publico;
-    
-    @Column(unique=true)
+
+    @Column(unique = true)
     private String nome;
 
+    @Temporal(TemporalType.DATE)
     private Date dataDoFato;
-    
+
     private String descricao;
-    /*
-        @ManyToOne
-    @JoinColumn(name = "usuario_id")
-    private Usuario usuario;
-    */
+
+    @OneToMany(cascade = ALL, mappedBy = "memorias")
+    private List<UsuarioMemoria> usuarios;
+
+    @OneToMany(mappedBy = "memorias")
+    private List<MemoriaGrupo> grupos;
+
+    @OneToMany(mappedBy = "memorias")
+    private List<UsuarioComentaMemoria> comentarios;
 
     public Memorias() {
     }
@@ -85,5 +95,29 @@ public class Memorias implements Serializable {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    
+
+    public List<UsuarioMemoria> getUsuarios() {
+        return usuarios;
+    }
+
+    public void setUsuarios(List<UsuarioMemoria> usuarios) {
+        this.usuarios = usuarios;
+    }
+
+    public List<MemoriaGrupo> getGrupos() {
+        return grupos;
+    }
+
+    public void setGrupos(List<MemoriaGrupo> grupos) {
+        this.grupos = grupos;
+    }
+
+    public List<UsuarioComentaMemoria> getComentarios() {
+        return comentarios;
+    }
+
+    public void setComentarios(List<UsuarioComentaMemoria> comentarios) {
+        this.comentarios = comentarios;
+    }
+
 }
