@@ -5,6 +5,7 @@
  */
 package com.mycompany.memorias.Servlet.Usuario;
 
+import com.mycompany.memorias.Hibernate.HibernateFactory;
 import com.mycompany.memorias.Hibernate.HibernateUtil;
 import com.mycompany.memorias.Models.Usuario;
 import java.io.IOException;
@@ -43,21 +44,25 @@ public class CadastroUsuario extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Usuario usuario = new Usuario();
+        
         //usuario.setDataNasc(request.getParameter("inputDataNasc"));
         usuario.setEmail(request.getParameter("inputEmail"));
-        usuario.setNascionalidade(request.getParameter("inputPais"));
+        usuario.setNacionalidade(request.getParameter("inputPais"));
         usuario.setNome(request.getParameter("inputNome"));
-        usuario.setSenha("inputSenha");
+        usuario.setSenha(request.getParameter("inputSenha"));
+        
         HibernateUtil<Usuario> hup = new HibernateUtil<>();
         String s = hup.salvar(usuario);
         HttpSession sessao = request.getSession();
+        
         sessao.setAttribute("usuario", usuario);
         sessao.setAttribute("usuario_logado", "true");
-        sessao.setAttribute("nome_usuario", request.getParameter("inputLogin"));
+        sessao.setAttribute("nome_usuario", request.getParameter("inputEmail"));
         response.sendRedirect("Interface/menu.jsp");
     }
 

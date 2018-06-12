@@ -48,23 +48,24 @@
                     </div>
                 </section>
 
-                <!-- Gallery -->
+                <!-- Galeria -->
                 <section id="galleries">
 
-                    <!-- Photo Galleries -->
+                    <!-- Fotos -->
                     <div class="gallery">
                         <header class="special">
                             <h2>Postagens Recentes</h2>
                         </header>
                         <div class="content">
                             <div class="media">
-                                <a href="images/fulls/09.jpg"><img src="images/fulls/09.jpg" alt="" title="O basket do primeiro Ano" /></a>
+                                <a href="images/fulls/09.jpg"><img src="images/fulls/09.jpg" alt="" title="O basquete do primeiro Ano"/></a>
+                            </div>
+
+                            <div class="media">
+                                <a href="images/fulls/escrever.jpg" ><img src="images/fulls/escrever.jpg" alt="" title="A alegria de escrever" /></a>
                             </div>
                             <div class="media">
-                                <a href="images/fulls/escrever.jpg" ><img src="images/fulls/escrever.jpg" alt="" title="A alegria de escrever"  /></a>
-                            </div>
-                            <div class="media">
-                                <a href="images/fulls/01.jpg"><img src="images/fulls/01.jpg" alt="" title="Imagem inserida diretamente para teste" /></a>
+                                <a href="images/fulls/01.jpg"><img src="images/fulls/01.jpg" alt="" title="Flores do funeral da Linda."/></a>
                             </div>
 
                         </div>
@@ -74,12 +75,12 @@
                     </div>
                 </section>
 
-                <!-- Contact -->
+                <!-- Nos Contate -->
                 <section id="contact">
                     <!-- Social -->
                     <div class="social column">
                         <h3>Sobre nós</h3>
-                        <p>Somos um grupo de estudantes de linguagem de programação realizando projeto sem fins lucrativos, tal como o memórias soltas.</p>
+                        <p>Desenvolvedores de aplicações web. Atualmente estudantes do Instituto Federal de Educação,Ciência e tecnologia do Amazonas, o IFAM.</p>
                         <p>Memórias soltas é um site onde você pode registrar todas suas memórias para que elas não sejam perdidas no tempo, o objetivo do projeto é criar um lugar seguro onde as pessoas possam compartilhar suas memórias com grupos internos, ao público, ou apenas guardá-las para si.
                         </p>
                         <h3>Siga nossas redes sociais</h3>
@@ -118,7 +119,7 @@
                     <form action="#" method="post">
                         <div class="field half first">
                             <label for="emailEfet">Email</label>
-                            <input name="emailEfet" id="emailEfet" type="email" placeholder="email.example@gmail.com">
+                            <input name="emailEfet" id="emailEfet" type="email" placeholder="email.exemplo@gmail.com">
                         </div>
                         <div class="field half first">
                             <label for="senhaEfet">Senha</label>
@@ -132,6 +133,7 @@
                 </section>
             </section>
         </div>
+        
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.poptrox.min.js"></script>

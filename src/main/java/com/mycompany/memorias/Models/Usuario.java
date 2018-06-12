@@ -31,11 +31,17 @@ public class Usuario implements Serializable {
     private String nome;
 
     @Temporal(TemporalType.DATE)
-    private Date dataNasc;
+    private String dataNasc;
 
-    private String nascionalidade;
+    private String nacionalidade;
 
     private String senha;
+    
+    private String diaNasc;
+    
+    private String mesNasc ;
+    
+    private String anoNasc;
 
     @OneToMany(cascade = ALL, mappedBy = "usuario")
     private List<UsuarioGrupo> grupos;
@@ -74,20 +80,46 @@ public class Usuario implements Serializable {
         this.nome = nome;
     }
 
-    public Date getDataNasc() {
-        return dataNasc;
+    public String getDataNasc() {
+        return (diaNasc+"/"+ mesNasc+"/"+ anoNasc);
     }
 
-    public void setDataNasc(Date dataNasc) {
-        this.dataNasc = dataNasc;
+    public void setDataNasc(String dia, String mes, String ano) {
+        this.diaNasc = dia;
+        this.mesNasc = mes;
+        this.anoNasc = ano;
     }
 
-    public String getNascionalidade() {
-        return nascionalidade;
+    public String getDiaNasc() {
+        return diaNasc;
     }
 
-    public void setNascionalidade(String nascionalidade) {
-        this.nascionalidade = nascionalidade;
+    public void setDiaNasc(String diaNasc) {
+        this.diaNasc = diaNasc;
+    }
+
+    public String getMesNasc() {
+        return mesNasc;
+    }
+
+    public void setMesNasc(String mesNasc) {
+        this.mesNasc = mesNasc;
+    }
+
+    public String getAnoNasc() {
+        return anoNasc;
+    }
+
+    public void setAnoNasc(String anoNasc) {
+        this.anoNasc = anoNasc;
+    }
+
+    public String getNacionalidade() {
+        return nacionalidade;
+    }
+
+    public void setNacionalidade(String nacionalidade) {
+        this.nacionalidade = nacionalidade;
     }
 
     public String getSenha() {
