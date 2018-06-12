@@ -10,5 +10,5 @@ package com.mycompany.memorias.Models;
  * @author Aluno
  */
 public class Teste {
-    
+    public String aaa;
 }
