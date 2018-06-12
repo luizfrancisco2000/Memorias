@@ -21,49 +21,26 @@ import javax.servlet.http.HttpSession;
  * @author Chico
  */
 public class CadastroUsuario extends HttpServlet {
-
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-    }
-
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Usuario usuario = new Usuario();
+                Usuario usuario = new Usuario();
         
+        //Someone help.
         //usuario.setDataNasc(request.getParameter("inputDataNasc"));
+        usuario.setDataNasc("26", "05", "00");
         usuario.setEmail(request.getParameter("inputEmail"));
         usuario.setNacionalidade(request.getParameter("inputPais"));
-        usuario.setNome(request.getParameter("inputNome"));
+        usuario.setNome(request.getParameter("inputName"));
         usuario.setSenha(request.getParameter("inputSenha"));
-        
+        PrintWriter out = response.getWriter();
+        //out.print(usuario.toString());
+        HttpSession sessao = request.getSession();
         HibernateUtil<Usuario> hup = new HibernateUtil<>();
         String s = hup.salvar(usuario);
-        HttpSession sessao = request.getSession();
-        
         sessao.setAttribute("usuario", usuario);
         sessao.setAttribute("usuario_logado", "true");
         sessao.setAttribute("nome_usuario", request.getParameter("inputEmail"));
         response.sendRedirect("Interface/menu.jsp");
     }
-
 }

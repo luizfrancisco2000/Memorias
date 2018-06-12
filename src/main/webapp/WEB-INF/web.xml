@@ -4,13 +4,24 @@
         <servlet-name>CadastroUsuario</servlet-name>
         <servlet-class>com.mycompany.memorias.Servlet.Usuario.CadastroUsuario</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LoginUsuario</servlet-name>
+        <servlet-class>com.mycompany.memorias.Servlet.Usuario.LoginUsuario</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CadastroUsuario</servlet-name>
         <url-pattern>/CadastroUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginUsuario</servlet-name>
+        <url-pattern>/LoginUsuario</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
+    <listener>
+        <listener-class>com.mycompany.memorias.AppServletListener.AppContextListener</listener-class>
+    </listener>
 </web-app>

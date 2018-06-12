@@ -24,13 +24,11 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name = "usuario")
 public class Usuario implements Serializable {
-
     @Id
     private String email;
     @Column(unique = true)
     private String nome;
 
-    @Temporal(TemporalType.DATE)
     private String dataNasc;
 
     private String nacionalidade;
@@ -88,6 +86,7 @@ public class Usuario implements Serializable {
         this.diaNasc = dia;
         this.mesNasc = mes;
         this.anoNasc = ano;
+        this.dataNasc=this.diaNasc+"/"+this.mesNasc+"/"+this.anoNasc;
     }
 
     public String getDiaNasc() {
@@ -177,6 +176,10 @@ public class Usuario implements Serializable {
 
     public void setComentariosMemorias(List<UsuarioComentaMemoria> comentariosMemorias) {
         this.comentariosMemorias = comentariosMemorias;
+    }
+    @Override
+    public String toString() {
+        return "Usuario{" + "email=" + email + ", nacionalidade=" + nacionalidade + ", senha=" + senha + ", diaNasc=" + diaNasc + ", mesNasc=" + mesNasc + ", anoNasc=" + anoNasc + ", grupos=" + grupos + ", usuariosgrupos=" + usuariosgrupos + ", memorias=" + memorias + ", documentos=" + documentos + ", comentariosGrupos=" + comentariosGrupos + ", comentariosMemorias=" + comentariosMemorias + '}';
     }
 
 }

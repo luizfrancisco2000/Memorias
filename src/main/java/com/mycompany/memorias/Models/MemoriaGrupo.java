@@ -16,11 +16,11 @@ public class MemoriaGrupo implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name = "grupo")
     private Grupo grupo;
-    @ManyToOne
-    @JoinColumn(name = "memoria")
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name = "memorias")
     private Memorias memoria;
 
     public MemoriaGrupo() {

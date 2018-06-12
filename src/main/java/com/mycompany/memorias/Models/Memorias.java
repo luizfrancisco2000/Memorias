@@ -27,7 +27,7 @@ import javax.persistence.TemporalType;
  * @author Chico
  */
 @Entity
-@Table(name = "memoria")
+@Table(name = "memorias")
 public class Memorias implements Serializable {
 
     @Id
@@ -43,7 +43,7 @@ public class Memorias implements Serializable {
     private Date dataDoFato;
 
     private String descricao;
-
+    
     @OneToMany(cascade = ALL, mappedBy = "memorias")
     private List<UsuarioMemoria> usuarios;
 
