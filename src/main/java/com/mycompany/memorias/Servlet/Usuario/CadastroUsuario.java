@@ -50,7 +50,8 @@ public class CadastroUsuario extends HttpServlet {
             throws ServletException, IOException {
         Usuario usuario = new Usuario();
         
-        //usuario.setDataNasc(request.getParameter("inputDataNasc"));
+        //Someone help.
+        usuario.setDataNasc(request.getParameter("inputDataNasc"));
         usuario.setEmail(request.getParameter("inputEmail"));
         usuario.setNacionalidade(request.getParameter("inputPais"));
         usuario.setNome(request.getParameter("inputNome"));
