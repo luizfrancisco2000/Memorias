@@ -28,7 +28,6 @@ public class CadastroUsuario extends HttpServlet {
         
         //Someone help.
         //usuario.setDataNasc(request.getParameter("inputDataNasc"));
-        usuario.setDataNasc("26", "05", "00");
         usuario.setEmail(request.getParameter("inputEmail"));
         usuario.setNacionalidade(request.getParameter("inputPais"));
         usuario.setNome(request.getParameter("inputName"));
