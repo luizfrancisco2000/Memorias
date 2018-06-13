@@ -55,8 +55,8 @@ Contributor(s):
         <mapping class="com.mycompany.memorias.Models.DocumentoUsuario"/>
     <mapping class="com.mycompany.memorias.Models.DocumentosGrupo"/>
     <mapping class="com.mycompany.memorias.Models.Grupo"/>
+        <mapping class="com.mycompany.memorias.Models.Memorias"/>
     <mapping class="com.mycompany.memorias.Models.MemoriaGrupo"/>
-    <mapping class="com.mycompany.memorias.Models.Memorias"/>
     <mapping class="com.mycompany.memorias.Models.UsuarioComentaGrupo"/>
     <mapping class="com.mycompany.memorias.Models.UsuarioComentaMemoria"/>
     <mapping class="com.mycompany.memorias.Models.UsuarioGrupo"/>
