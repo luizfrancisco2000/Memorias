@@ -1,3 +1,4 @@
+<%@page import="java.io.FileReader"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
 
@@ -10,9 +11,18 @@
     </head>
     <body>
         <%@page import="javax.servlet.http.*"%>
+        <%@page import="javax.script.*"%>
+
         <%
-            HttpSession sessao = request.getSession();
-            if (sessao.getAttribute("usuario_logado") == null) {
+            /*HttpSession sessao = request.getSession();
+            Boolean resultado;
+            ScriptEngineManager factory = new ScriptEngineManager();
+            ScriptEngine engine = factory.getEngineByName("JavaScript");
+            Invocable invocable = (Invocable) engine;
+            engine.eval(new FileReader("src/main/webapp/Interface/verifica.js"));
+            invocable.invokeFunction("valida_email", sessao.getAttribute("email"));
+*/
+            /*else if (sessao.getAttribute("usuario_logado") == null) {
                 sessao.setAttribute("usuario_logado", "false");
                 if (!request.getRequestURI().contains("negocios.jsp")
                         && !request.getRequestURI().contains("index.jsp")
@@ -20,7 +30,8 @@
                         && !request.getRequestURI().contains("usuario.jsp")) {
                     response.sendRedirect("menu.jsp");
                 }
-            }
+            } else {
+            }*/
         %>
         <div class="page-wrap">
 
@@ -133,14 +144,14 @@
                 </section>
             </section>
         </div>
-        
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.poptrox.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/skel.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
 
-</body>
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.poptrox.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/skel.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
+    </body>
 </html>

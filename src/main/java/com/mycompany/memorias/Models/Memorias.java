@@ -47,7 +47,7 @@ public class Memorias implements Serializable {
     @OneToMany(cascade = ALL, mappedBy = "memorias")
     private List<UsuarioMemoria> usuarios;
 
-    @OneToMany(mappedBy = "memorias")
+    @OneToMany(mappedBy = "grupo")
     private List<MemoriaGrupo> grupos;
 
     @OneToMany(mappedBy = "memorias")
