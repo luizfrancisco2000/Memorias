@@ -51,7 +51,7 @@ Contributor(s):
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">root</property>
     <property name="hibernate.hbm2ddl.auto">update</property>
-    <mapping class="com.mycompany.memorias.Models.Usuario"/>
+    <mapping class="com.mycompany.memorias.Models.Usuario" file="" jar="" package="" resource=""/>
     <mapping class="com.mycompany.memorias.Models.DocumentoUsuario"/>
     <mapping class="com.mycompany.memorias.Models.DocumentosGrupo"/>
     <mapping class="com.mycompany.memorias.Models.Grupo"/>
@@ -62,6 +62,5 @@ Contributor(s):
     <mapping class="com.mycompany.memorias.Models.UsuarioGrupo"/>
     <mapping class="com.mycompany.memorias.Models.UsuarioMemoria"/>
     <mapping class="com.mycompany.memorias.Models.UsuariosGrupo"/>
-
   </session-factory>
 </hibernate-configuration>

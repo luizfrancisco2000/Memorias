@@ -36,11 +36,6 @@ public class Usuario implements Serializable {
 
     private String senha;
     
-    private String diaNasc;
-    
-    private String mesNasc ;
-    
-    private String anoNasc;
 
     @OneToMany(cascade = ALL, mappedBy = "usuario")
     private List<UsuarioGrupo> grupos;
@@ -142,10 +137,6 @@ public class Usuario implements Serializable {
 
     public void setComentariosMemorias(List<UsuarioComentaMemoria> comentariosMemorias) {
         this.comentariosMemorias = comentariosMemorias;
-    }
-    @Override
-    public String toString() {
-        return "Usuario{" + "email=" + email + ", nacionalidade=" + nacionalidade + ", senha=" + senha + ", diaNasc=" + diaNasc + ", mesNasc=" + mesNasc + ", anoNasc=" + anoNasc + ", grupos=" + grupos + ", usuariosgrupos=" + usuariosgrupos + ", memorias=" + memorias + ", documentos=" + documentos + ", comentariosGrupos=" + comentariosGrupos + ", comentariosMemorias=" + comentariosMemorias + '}';
     }
         public Date getDataNasc() {
         return dataNasc;
