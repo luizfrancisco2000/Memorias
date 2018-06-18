@@ -10,6 +10,11 @@ import com.mycompany.memorias.Hibernate.HibernateUtil;
 import com.mycompany.memorias.Models.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -31,7 +36,7 @@ public class CadastroUsuario extends HttpServlet {
             Date date = formato.parse(request.getParameter("inputDataNasc"));
             usuario.setDataNasc(date);
         } catch (ParseException ex) {
-            Logger.getLogger(UsuarioServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CadastroUsuario.class.getName()).log(Level.SEVERE, null, ex);
         }
         usuario.setEmail(request.getParameter("inputEmail"));
         usuario.setNacionalidade(request.getParameter("inputPais"));
