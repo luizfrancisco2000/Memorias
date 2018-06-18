@@ -29,8 +29,9 @@ public class Usuario implements Serializable {
     @Column(unique = true)
     private String nome;
 
-    private String dataNasc;
-
+    @Temporal(TemporalType.DATE)
+    private Date dataNasc;
+    
     private String nacionalidade;
 
     private String senha;
@@ -76,41 +77,6 @@ public class Usuario implements Serializable {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public String getDataNasc() {
-        return (diaNasc+"/"+ mesNasc+"/"+ anoNasc);
-    }
-
-    public void setDataNasc(String dia, String mes, String ano) {
-        this.diaNasc = dia;
-        this.mesNasc = mes;
-        this.anoNasc = ano;
-        this.dataNasc=this.diaNasc+"/"+this.mesNasc+"/"+this.anoNasc;
-    }
-
-    public String getDiaNasc() {
-        return diaNasc;
-    }
-
-    public void setDiaNasc(String diaNasc) {
-        this.diaNasc = diaNasc;
-    }
-
-    public String getMesNasc() {
-        return mesNasc;
-    }
-
-    public void setMesNasc(String mesNasc) {
-        this.mesNasc = mesNasc;
-    }
-
-    public String getAnoNasc() {
-        return anoNasc;
-    }
-
-    public void setAnoNasc(String anoNasc) {
-        this.anoNasc = anoNasc;
     }
 
     public String getNacionalidade() {
@@ -181,5 +147,12 @@ public class Usuario implements Serializable {
     public String toString() {
         return "Usuario{" + "email=" + email + ", nacionalidade=" + nacionalidade + ", senha=" + senha + ", diaNasc=" + diaNasc + ", mesNasc=" + mesNasc + ", anoNasc=" + anoNasc + ", grupos=" + grupos + ", usuariosgrupos=" + usuariosgrupos + ", memorias=" + memorias + ", documentos=" + documentos + ", comentariosGrupos=" + comentariosGrupos + ", comentariosMemorias=" + comentariosMemorias + '}';
     }
+        public Date getDataNasc() {
+        return dataNasc;
+    }
 
+    public void setDataNasc(Date dataNasc) {
+        this.dataNasc = dataNasc;
+    }
+    
 }

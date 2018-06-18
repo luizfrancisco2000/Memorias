@@ -26,8 +26,13 @@ public class CadastroUsuario extends HttpServlet {
             throws ServletException, IOException {
                 Usuario usuario = new Usuario();
         
-        //Someone help.
-        //usuario.setDataNasc(request.getParameter("inputDataNasc"));
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            Date date = formato.parse(request.getParameter("inputDataNasc"));
+            usuario.setDataNasc(date);
+        } catch (ParseException ex) {
+            Logger.getLogger(UsuarioServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
         usuario.setEmail(request.getParameter("inputEmail"));
         usuario.setNacionalidade(request.getParameter("inputPais"));
         usuario.setNome(request.getParameter("inputName"));
